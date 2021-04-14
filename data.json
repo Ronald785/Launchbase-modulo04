@@ -1,1 +1,20 @@
-{"avatar_url":"https://pbs.twimg.com/profile_images/1370536563726254089/ru8Dmn5Y_400x400.jpg","name":"Ronald Mateus","birth":"2001-10-12","gender":"M","services":"Crossfit"}
+{
+  "instructors": [
+    {
+      "avatar_url": "http://pbs.twimg.com/profile_images/1370536563726254089/ru8Dmn5Y_400x400.jpg",
+      "name": "Ronald Mateus",
+      "birth": 1002844800000,
+      "gender": "M",
+      "services": "Crossfit",
+      "created_at": 1618406137209
+    },
+    {
+      "avatar_url": "https://pbs.twimg.com/profile_images/1373416522664804355/MzES-0k3_400x400.jpg",
+      "name": "Letícia Soares",
+      "birth": 1024531200000,
+      "gender": "F",
+      "services": "Crossfit",
+      "created_at": 1618406158568
+    }
+  ]
+}
