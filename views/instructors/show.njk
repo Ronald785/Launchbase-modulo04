@@ -3,7 +3,7 @@
 {% block content %}
     <div class="card">
     <section class="avatar" 
-                style="background: url({{instructor.avatar_url}}) no-repeat center center / cover">
+             style="background: url({{instructor.avatar_url}}) no-repeat center center / cover">
     </section>
     
     <section class="details">
@@ -11,12 +11,12 @@
 
         <div class="item">
             <div>Instrutor</div>
-            <div>{{instructor.name}}</div>
+            <div>{{ instructor.name }}</div>
         </div>
 
         <div class="item">
             <div>Idade</div>
-            <div>{{instructor.age}}</div>
+            <div>{{ instructor.age }}</div>
         </div>
 
         <div class="item">
@@ -35,11 +35,11 @@
 
          <div class="item">
             <div>Desde</div>
-            <div>{{instructor.created_at}}</div>
+            <div>{{ instructor.created_at }}</div>
         </div>
 
-        <a href="#" class="button">Editar</a>
+        <a href="/instructors/{{ instructor.id }}/edit" class="button">Editar</a>
 
     </section>
     </div>
-{% endblock %}
+{% endblock content %}

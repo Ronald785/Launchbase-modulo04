@@ -44,7 +44,6 @@ header{
 .links a.active{
     font-weight: bold;
     color: var(--rocketseat-color);
-    
 }
 
 .links a:hover{
@@ -184,6 +183,8 @@ a.button {
     margin-top: 32px;
     padding: 8px 32px;
     width: 100%;
+
+    cursor: pointer;
 }
 
 a.button {
@@ -193,3 +194,7 @@ a.button {
     text-decoration: none;
 }
 
+#form-delete button[type="submit"] {
+    margin-top: 8px;
+    background-color: lightcoral;
+}

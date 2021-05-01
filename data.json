@@ -1,15 +1,6 @@
 {
   "instructors": [
     {
-      "id": 1,
-      "avatar_url": "https://pbs.twimg.com/profile_images/1370536563726254089/ru8Dmn5Y_400x400.jpg",
-      "name": "Ronald Almeida",
-      "birth": 1002844800000,
-      "gender": "M",
-      "services": "Crossfit",
-      "created_at": 1619783839861
-    },
-    {
       "id": 2,
       "avatar_url": "https://pbs.twimg.com/profile_images/1386421163073626112/OvSrKc4F_400x400.jpg",
       "name": "Letícia Soares",
