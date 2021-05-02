@@ -3,6 +3,11 @@ const fs = require('fs')
 const data = require('./data.json')
 const { age, date } = require('./util')
 
+//INDEX
+exports.index = function(req, res){
+    return res.render("instructors/index", { instructors: data.instructors })
+}
+
 //SHOW
 exports.show = function (req, res){
     //1º req.query.id na url: /?id=1 || 2º req.body direto do formulário pelo POST
@@ -115,7 +120,8 @@ exports.put = function(req, res){
     const instructor = {
         ...foundInstructor,
         ...req.body,
-        birth: Date.parse(req.body.birth)
+        birth: Date.parse(req.body.birth),
+        id: Number(req.body.id)
     }
 
     data.instructors[index] = instructor
