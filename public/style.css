@@ -7,15 +7,15 @@
 }
 
 /*Zerando as pré-definições do navegador*/
-*{
+* {
     margin: 0;
     padding: 0;
     border: none;
 }
 
-body{
-    font-family: 'Roboto', sans-serif;
+body {
     background-color: var(--rocketseat-color);
+    font-family: 'Roboto', sans-serif;
 }
 
 header{
@@ -23,7 +23,6 @@ header{
     width: 100%;
     padding: 32px;
     text-align: center;
-    text-decoration: none;
     box-sizing: border-box;
 }
 
@@ -35,7 +34,7 @@ header{
     margin-left: 32px;
 }
 
-.links a{
+.links a {
      text-decoration: none;
      color: #777;
      position: relative;
@@ -73,17 +72,17 @@ header{
     min-height: 400px;
 
     /*Espaçamento ao centro*/
-    margin: 48px auto;
+    margin: 45px auto;
 
     /*Dividir box ao meio*/
     display: grid;
     grid-template-columns: 1fr 1fr;
 
     /*Sombra*/
-    box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.7);
+    box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.4);
 
     /*animation nome tempo e modo*/
-    animation: up 700ms ease-in-out;
+    animation: up 200ms ease;
 }
 
 @keyframes up{
@@ -98,23 +97,23 @@ header{
 
 /* DETAILS */
 
-.details{
+.details {
     padding: 32px;
 }
 
-.details .item{
+.details .item {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding: 16px 0;
 }
 
 /*Modificar somente o último*/
 .details .item:last-child{
-    border-bottom: none;
+    border: none;
 }
 
 /*Modificar somente a primeira div*/
 .details h3,
-.details .tem div:nth-child(1){
+.details .item div:nth-child(1){
     color: #777;
     font-size: 14px;
     font-weight: normal;
@@ -128,7 +127,6 @@ header{
     color: #555;
     font-size: 18px;
     font-weight: bold;
-    margin-top: 5px;
 }
 
 .details h3{
@@ -156,7 +154,7 @@ header{
 
 /* === FORM === */
 
-input{
+input, select {
     width: 100%;
     outline: none;
     color: #555;
@@ -164,12 +162,12 @@ input{
     font-weight: bold;
 }
 
-input[type="radio"]{
+input[type="radio"] {
     width: initial;
     margin-right: 4px;
 }
 
-input::placeholder{
+input::placeholder {
     font-size: 16px;
     font-weight: normal;
 }
@@ -177,7 +175,7 @@ input::placeholder{
 button[type="submit"],
 a.button {
     background-color: var(--rocketseat-color);
-    border-radius: 8px;
+    border-radius: 4px;
     color: white;
     font-size: 16px;
     margin-top: 32px;
@@ -247,7 +245,8 @@ tbody tr td:first-child span {
     border: 2px solid white;
 }
 
-tbody tr td:last-child a {
+tbody tr td:last-child a,
+.table-container > a {
     background-color: var(--rocketseat-color);
     padding: 8px 16px;
     text-decoration: none;
@@ -257,20 +256,12 @@ tbody tr td:last-child a {
     border-radius: 4px;
 }
 
+.table-container > a {
+    margin-bottom: 16px;
+    display: inline-block;
+}
+
 .table-container thead tr th:last-child,
 td:last-child {
     text-align: center;
-}
-
-.try span {
-    padding: 8px 16px;
-    background-color: var(--secondary-color);
-    border-radius: 16px;
-    color: #777;
-
-    /*Por padrão span é inline*/
-    display: inline-block;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 12px;
 }

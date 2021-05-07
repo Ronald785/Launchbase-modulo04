@@ -3,8 +3,8 @@
  
     <head>
         {% block head%}
-            <title>Gym Manage</title>
-        {% endblock%}
+            <title>Gym Manager</title>
+        {% endblock %}
 
         <link rel="stylesheet" href="/style.css">
     </head>
@@ -13,14 +13,13 @@
     <body>
         <header>
             <div class="links">
-                <a href="/" class="active">Instructors</a>
+                <a href="/instructors">Instructors</a>
                 <a href="/members">Members</a>
             </div>
         </header>
         
-       {% block content %}
+       {% block content %} {% endblock %}
 
-       {% endblock %}
+         <script src="/scripts.js"></script>
     </body>
-
 </html>

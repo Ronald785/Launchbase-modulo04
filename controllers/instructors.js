@@ -1,40 +1,19 @@
 const fs = require('fs')
 //File System do node 
-const data = require('./data.json')
-const { age, date } = require('./util')
+const data = require('../data.json')
+const { age, date } = require('../util')
 
 //INDEX
 exports.index = function(req, res){
     return res.render("instructors/index", { instructors: data.instructors })
 }
 
-//SHOW
-exports.show = function (req, res){
-    //1º req.query.id na url: /?id=1 || 2º req.body direto do formulário pelo POST
-    //3º req.params
-    const { id } = req.params
-    
-    const foundInstructor = data.instructors.find(function(instructor){
-        return instructor.id == id
-    })
-
-    if (!foundInstructor){
-        return res.send("Instructor not found!")
-    }
-
-    const instructor = {
-        ...foundInstructor,
-        age: age(foundInstructor.birth),
-        services: foundInstructor.services.split(","),
-        //Conversão da data
-        created_at: new Intl.DateTimeFormat("pt-BR").format(foundInstructor.created_at),
-    }
-
-
-    return res.render("instructors/show", { instructor })
+//CREATE
+exports.create = function(req, res){
+    return res.render("instructors/create")
 }
 
-//CREATE
+//Post
 exports.post = function(req, res){
     //Validando se todos os dados estão preenchidos
     //Object é um constructor 
@@ -75,6 +54,32 @@ exports.post = function(req, res){
    // return res.send(req.body)
 }
 
+//SHOW
+exports.show = function (req, res){
+    //1º req.query.id na url: /?id=1 || 2º req.body direto do formulário pelo POST
+    //3º req.params
+    const { id } = req.params
+    
+    const foundInstructor = data.instructors.find(function(instructor){
+        return id == instructor.id
+    })
+
+    if (!foundInstructor){
+        return res.send("Instructor not found!")
+    }
+
+    const instructor = {
+        ...foundInstructor,
+        age: age(foundInstructor.birth),
+        services: foundInstructor.services.split(","),
+        //Conversão da data
+        created_at: new Intl.DateTimeFormat("pt-BR").format(foundInstructor.created_at),
+    }
+
+
+    return res.render("instructors/show", { instructor })
+}
+
 //EDIT
 exports.edit = function(req, res){
     const { id } = req.params
@@ -93,7 +98,7 @@ exports.edit = function(req, res){
 
     const instructor = {
         ...foundInstructor,
-        birth: date(foundInstructor.birth)
+        birth: date(foundInstructor.birth).iso
     }
 
     date(foundInstructor.birth)
